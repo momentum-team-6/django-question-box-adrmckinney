@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="main">
+        {% for post in posts %}
+                <div class="post-container">
+                    <p>Title: {{ post.question_title }}</p>
+                    <p>Body: {{ post.question_body }}</p>
+                    <p><a href="{% url 'answer' pk=post.pk %}">Write an answer</a></p>
+                    {% for answer in post.answers.all %}
+                        <p class="checkmark-parent" data-answer-pk="{{ answer.pk }}">
+                            <i class="fa-check {% if answer.is_correct %}fas{% else %}far{% endif %}"></i>
+                            Answer: {{ answer.answer }}
+                        </p>
+                    
+                    {% endfor %}
+                </div>  
+        {% endfor %}
+    </div>
+{% endblock %}

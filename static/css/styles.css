@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.site-title {
+    text-align: center;
+}
+
+.header {
+    margin: 10px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-container {
+    margin: 10px;
+    padding: 10px;
+}
+
+.sub-page-main {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="sub-page-main">
+
+    <h1>Delete Post</h1>
+
+    <div class="post-container">
+        <form action="{% url 'delete_post' pk=post.pk %}" method="POST">
+            {% csrf_token %}
+            <p>Are you sure you want to delete "{{ post.question_title }}"?</p>
+            <div>
+                <button type="submit">Delete Contact</button><br />
+                <a href="{% url 'list_posts' %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

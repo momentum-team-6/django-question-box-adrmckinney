@@ -1,11 +1,23 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'icofont/icofont.min.css' %}">
+    <script src="{% static 'js/scripts.js' %}" defer></script>
+    <script src="https://kit.fontawesome.com/846acebbe7.js" crossorigin="anonymous"></script>
     <title>Question Box</title>
 </head>
 <body>
-    
+    <h1 class="site-title">Question Box</h1>
+    <p class="header"><a href="/accounts/login">Sign in</a></p>
+    <p class="header"><a href="/accounts/logout">Logout</a></p>
+    <p class="header"><a href="{% url 'list_posts' %}">Home</a></p>
+    <p class="header"><a href="{% url 'post_question' %}">Post Question</a></p>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>

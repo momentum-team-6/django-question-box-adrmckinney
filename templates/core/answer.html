@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Provide Answer</h1>
+
+<div>
+    <p>Title: {{ post.question_title }}</p>
+    <p>Body: {{ post.question_body }}</p>
+    
+    <form action="{% url 'answer' pk=post.pk %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

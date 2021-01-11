@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="post-details-main">
+    <h1>Post Details</h1>
+        <div class="post-container">
+            <p>Title: {{ post.question_title }}</p>
+            <p>Body: {{ post.question_body }}</p>
+        
+            {% for answer in post.answers.all %}
+                {{ answer.answer }}
+            {% endfor %}
+        </div>
+</div>
+{% endblock %}

@@ -16,10 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
+from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
+    path("", views.list_posts, name='list_posts'),
+    path("core/question/", views.post_question, name='post_question'),
+    path("core/<int:pk>/answer", views.answer, name='answer'),
+    path("core/details/<int:pk>", views.post_details, name='post_details'),
+    path("core/delete/<int:pk>", views.delete_post, name="delete_post"),
+    path("core/<int:pk>/correct", views.correct_answer, name='correct_answer'),
 ]
 
 if settings.DEBUG:
